@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+    <!-- Animate.css link -->
+
+    <title>Welcome to Ashley Gurczynski's Website</title>
+    <!-- Add any additional CSS or styling links here -->
+    <style>
+        /* Define CSS styles here */
+        .header {
+            font-family: Marker Felt, fantasy; 
+            font-size: 20px; 
+            color: #000000; 
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact-info {
+            font-family: Marker Felt, fantasy; 
+            font-size: 16px; 
+            color: #000000; 
+            text-align: center;
+            margin-top: 10px;
+        }
+        body {
+            background-image: url('https://onedrive.live.com/embed?resid=7C644C73E287BE39%2110644&authkey=%21AL8OBv56zVFE6vg&width=2480&height=3508');
+            background-size: cover;
+        }   
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;    
+        }
+
+        #particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none; 
+            /* particles don't interfere with mouse events */
+}
+
+        .particle {
+            position: absolute;
+            background-color: #2b0505; 
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+}
+@keyframes particle-animation {
+    to {
+            transform: translate(calc(-50% + ${Math.random() * 200}px), calc(-50% + ${Math.random() * 200}px));
+            opacity: 0;
+    }
+
+}
+
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- Header section-->
+    <div class="header">
+        <h1 class="animate__animated animate__bounceInDown">Hi! My name is Ash. If you want to contact me please check the links below.</h1>
+    </div>
+
+    <!-- Contact information section -->
+
+    <div class="contact-info"> 
+        <p>Email: <a href="mailto:ashzalinto@gmail.com"  >ashzalinto@gmail.com </a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ashley-gurczynski-366b5a160/" target="_blank" >View LinkedIn </a></p></a></p> 
+        <p>Resume: <a href="https://1drv.ms/w/s!Ajm-h-JzTGR80l8cuP8Xm752bKN4?e=w9lM5a" target="_blank"  >View Resume </a></p>
+
+
+
+
+    <div id="particle-container"></div>
+
+    <script>
+    document.addEventListener('mousemove', (event) => {
+        createParticle(event.pageX, event.pageY);
+    });
+    
+    function createParticle(x, y) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        document.getElementById('particle-container').appendChild(particle);
+    
+        // initial position of the particle
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+    
+        // Randomize the particle animation duration
+        const animationDuration = Math.random() * 1 + 0.5; 
+        // Between 0.5 and 1.5 seconds
+    
+        // Add the animation class to the particle
+        particle.style.animation = `particle-animation ${animationDuration}s linear`;
+    
+        // Removes the particle element after the animation ends
+        particle.addEventListener('animationend', () => {
+            particle.remove();
+        });
+    }
+    
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
