@@ -9,9 +9,9 @@
     <!-- Animate.css link -->
 
     <title>Welcome to Ashley Gurczynski's Website</title>
-    <!-- Add any additional CSS or styling links here -->
+    
     <style>
-        /* Define CSS styles here */
+       
         .header {
             font-family: Marker Felt, fantasy; 
             font-size: 20px; 
@@ -71,12 +71,12 @@
 </head>
 
 <body>
-    <!-- Header section-->
+
     <div class="header">
         <h1 class="animate__animated animate__bounceInDown">Hi! My name is Ash. If you want to contact me please check the links below.</h1>
     </div>
 
-    <!-- Contact information section -->
+
 
     <div class="contact-info"> 
         <p>Email: <a href="mailto:ashzalinto@gmail.com"  >ashzalinto@gmail.com </a></p>
@@ -105,11 +105,9 @@
         // Randomize the particle animation duration
         const animationDuration = Math.random() * 1 + 0.5; 
         // Between 0.5 and 1.5 seconds
-    
-        // Add the animation class to the particle
+        
         particle.style.animation = `particle-animation ${animationDuration}s linear`;
     
-        // Removes the particle element after the animation ends
         particle.addEventListener('animationend', () => {
             particle.remove();
         });
